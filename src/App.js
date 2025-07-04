@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './app.css';
 import CreateProducts from './Components/CreateProducts/CreateProducts';
 import ProductList from './Components/ProductList/ProductList';
@@ -9,6 +9,7 @@ import RefDemo from './Components/RefsDemo';
 import ReducerDemo from './Components/ReducerDemo/ReducerDemo';
 import AuthContext from './Components/Context/AuthContext';
 import Input from './Components/Input/Input';
+import DemoClass from './Components/ClassBased/DemoClass';
 
 let products = [
     {
@@ -93,7 +94,7 @@ function App() {
         updateShowModal(false);
     }
 
-// Product form, list, filter example
+    // Product form, list, filter example
     // return (<div className='row'>
     //     <div className='col-lg-8 mx-auto'>
     //         <Button eventHandler={displayModal}>Show Modal</Button>
@@ -109,7 +110,7 @@ function App() {
     //     <RefDemo></RefDemo>
     // </>
 
-// Side-Effect/useEffect example
+    // Side-Effect/useEffect example
     // const [resourceType, setResourceType] = useState('Home')
     // useEffect(() => {}, [])
     // return <>
@@ -119,20 +120,41 @@ function App() {
     //     <h2>{resourceType}</h2>
     // </>
 
-// useReducer example
+    // useReducer example
     //  return <>
     //     <ReducerDemo></ReducerDemo>
     //  </>
 
-//useContext Example   
+    //useContext Example   
     //   const [isLoggedIn, updateLoginIn] = useState(true);
     //     return <AuthContext.Provider value={{ isLoggedIn: isLoggedIn }}>
     //         <ReducerDemo></ReducerDemo>
     //     </AuthContext.Provider>
-//useImperative Example
-    // return <Input>
-    
+    //useImperative Example
+    // const [email, emailStateHandler] = useState('');
+    // const emailRef = useRef('');
+    // function onEmailChangeHandler(event) {
+    //     console.log('dcsc', emailRef.current.value)
+    //     emailStateHandler(event.target.value);
+    // }
+    // function onEmailBlueHandler(event) {
+    //     return true;
+
+    // }
+
+    // return <Input
+    //     ref={emailRef}
+    //     type='email'
+    //     id='email'
+    //     value={email}
+    //     onChangeHandler={onEmailChangeHandler}
+    //     onBlurHandler={onEmailBlueHandler}
+    // >
+    //     E-Mail:
     // </Input>
+    return <>
+    <DemoClass>Setting children prop from App Component</DemoClass>
+    </>
 }
 
 export default App;

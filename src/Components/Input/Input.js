@@ -1,22 +1,32 @@
-import React from "react";
+import React, { useImperativeHandle, useRef } from "react";
 
-function Input(props) {
+const Input = React.forwardRef((props, ref) => {
 
-    return (<div
+    useImperativeHandle(ref, () => {
+        return { focus: customFocus, value: inputRef }
+    })
+
+    const inputRef = useRef('')
+
+    function customFocus() {
+        inputRef.current.focus();
+    }
+
+    return <div
         className={props.class}>
-        <label htmlFor={props.htmlFor}>{props.label}</label>
+        <label htmlFor={props.htmlFor}>{props.children}</label>
         <input
+            ref={inputRef}
             type={props.name}
             id={props.id}
             value={props.value}
             onChange={props.onChangeHandler}
             onBlur={props.onBlurHandler}
         >
-
         </input>
 
-    </div>)
+    </div>
 
-}
+})
 
 export default Input;
