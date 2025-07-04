@@ -9,7 +9,7 @@ import RefDemo from './Components/RefsDemo';
 import ReducerDemo from './Components/ReducerDemo/ReducerDemo';
 import AuthContext from './Components/Context/AuthContext';
 import Input from './Components/Input/Input';
-import DemoClass from './Components/ClassBased/DemoClass';
+import ClassComponent from './Components/ClassBased/ClassComponent';
 
 let products = [
     {
@@ -152,8 +152,9 @@ function App() {
     // >
     //     E-Mail:
     // </Input>
+    // Class Component Example
     return <>
-    <DemoClass>Setting children prop from App Component</DemoClass>
+    <ClassComponent>Setting children prop from App Component</ClassComponent>
     </>
 }
 
