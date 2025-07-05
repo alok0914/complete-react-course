@@ -10,6 +10,8 @@ import ReducerDemo from './Components/ReducerDemo/ReducerDemo';
 import AuthContext from './Components/Context/AuthContext';
 import Input from './Components/Input/Input';
 import ClassComponent from './Components/ClassBased/ClassComponent';
+import DemoContext from './Components/Context/DemoContext';
+import ErrorBoundaries from './Components/ErrorBoundaries';
 
 let products = [
     {
@@ -142,6 +144,7 @@ function App() {
 
     // }
 
+    //forwardRef Example
     // return <Input
     //     ref={emailRef}
     //     type='email'
@@ -152,10 +155,16 @@ function App() {
     // >
     //     E-Mail:
     // </Input>
-    // Class Component Example
+
+    // Class Component + Error Boundaries Example
     return <>
-    <ClassComponent>Setting children prop from App Component</ClassComponent>
+        <DemoContext.Provider value={{ value: 'This is from demo ctx' }}>
+            <ErrorBoundaries>
+                <ClassComponent>Setting children prop from App Component</ClassComponent>
+            </ErrorBoundaries>
+        </DemoContext.Provider>
     </>
+
 }
 
 export default App;
