@@ -8,6 +8,7 @@
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.3.7",
+    "jest-sonar-reporter": "^2.0.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-scripts": "5.0.1",
@@ -17,7 +18,13 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+     "test-coverage": "rm -rf test-coverage && react-scripts test --coverageDirectory test-coverage --coverage --watchAll=false --testResultsProcessor jest-sonar-reporter"
+  },
+  "jestSonar": {
+    "reportPath": "test-coverage/sonar",
+    "reportFile": "sonar-report.xml",
+    "indent": 4
   },
   "eslintConfig": {
     "extends": [
