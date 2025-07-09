@@ -12,6 +12,7 @@ import Input from './Components/Input/Input';
 import ClassComponent from './Components/ClassBased/ClassComponent';
 import DemoContext from './Components/Context/DemoContext';
 import ErrorBoundaries from './Components/ErrorBoundaries';
+import UserList from './Components/Users/UserList';
 
 let products = [
     {
@@ -157,13 +158,16 @@ function App() {
     // </Input>
 
     // Class Component + Error Boundaries Example
-    return <>
-        <DemoContext.Provider value={{ value: 'This is from demo ctx' }}>
-            <ErrorBoundaries>
-                <ClassComponent>Setting children prop from App Component</ClassComponent>
-            </ErrorBoundaries>
-        </DemoContext.Provider>
-    </>
+    // return <>
+    //     <DemoContext.Provider value={{ value: 'This is from demo ctx' }}>
+    //         <ErrorBoundaries>
+    //             <ClassComponent>Setting children prop from App Component</ClassComponent>
+    //         </ErrorBoundaries>
+    //     </DemoContext.Provider>
+    // </>
+
+    //UserList Example
+    return <UserList></UserList>
 
 }
 
